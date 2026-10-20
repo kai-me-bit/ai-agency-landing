@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>AI Technical Partner &middot; Apply</title>
+<meta name="description" content="Application for a senior AI technical partner working directly on Jarvis and our AI agency ecosystem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#0a0a0a;--card:#181818;--dim:#e2e2e2;--green:#32d09f;--green-deep:#1fa87c;--ink:#fff;--line:#2c2c2c;--mut:#8d8d8d;
+--display:'Archivo',system-ui,-apple-system,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);font-weight:500;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:40px 20px 90px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin:0 0 10px}
+h1{font-weight:900;font-size:clamp(30px,5.2vw,44px);line-height:1.07;letter-spacing:-.03em;margin:0 0 14px}
+.lede{color:var(--dim);margin:0 0 6px}
+.mut{color:var(--mut);font-size:15px}
+.bar{position:sticky;top:0;z-index:5;background:rgba(10,10,10,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 20px;margin-bottom:26px}
+.bar-in{max-width:760px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.track{height:3px;background:var(--line);border-radius:3px;margin-top:9px;overflow:hidden}
+.track span{display:block;height:100%;background:var(--green);width:0;transition:width .35s cubic-bezier(.2,.7,.3,1)}
+fieldset{border:0;margin:0;padding:0}
+.step{display:none}
+.step.on{display:block;animation:in .3s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-weight:900;font-size:24px;letter-spacing:-.02em;margin:0 0 4px}
+.sub{color:var(--mut);font-size:15px;margin:0 0 26px}
+label{display:block;font-weight:700;margin:0 0 7px;font-size:16px}
+.hint{color:var(--mut);font-weight:500;font-size:14px;margin:-3px 0 9px}
+.f{margin:0 0 24px}
+input[type=text],input[type=email],input[type=url],select,textarea{width:100%;background:var(--card);border:1px solid var(--line);color:var(--ink);
+font-family:var(--display);font-size:16px;font-weight:500;padding:13px 14px;border-radius:11px;outline:none}
+textarea{min-height:130px;resize:vertical;line-height:1.55}
+input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(50,208,159,.16)}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--mut) 50%),linear-gradient(135deg,var(--mut) 50%,transparent 50%);
+background-position:calc(100% - 19px) 22px,calc(100% - 14px) 22px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:0;height:0}
+.chip span{display:block;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);cursor:pointer;font-size:15px;font-weight:600}
+.chip input:checked+span{border-color:var(--green);background:rgba(50,208,159,.13);color:var(--green)}
+.chip input:focus-visible+span{box-shadow:0 0 0 3px rgba(50,208,159,.25)}
+.nav{display:flex;gap:11px;align-items:center;margin-top:34px;flex-wrap:wrap}
+.btn{font-family:var(--display);font-weight:900;font-size:16px;padding:14px 26px;border-radius:12px;border:0;cursor:pointer;letter-spacing:-.01em}
+.btn-go{background:var(--green);color:#04231a}
+.btn-go:hover{background:var(--green-deep)}
+.btn-back{background:transparent;color:var(--mut);border:1px solid var(--line)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.note{color:var(--mut);font-size:14px;margin-top:16px}
+.err{color:#ff9b7d;font-size:15px;font-weight:700;min-height:22px;margin-top:10px}
+.case{border:1px solid var(--line);border-left:3px solid var(--green);background:var(--card);border-radius:12px;padding:16px 18px;margin:0 0 22px}
+.case p{margin:0 0 8px}
+.case ul{margin:6px 0 0;padding-left:18px;color:var(--dim)}
+.case li{margin:3px 0}
+.done{text-align:center;padding:60px 0}
+.done h2{font-size:30px}
+.loc-wrap{position:relative}
+.loc-list{position:absolute;left:0;right:0;top:calc(100% + 6px);margin:0;padding:6px;list-style:none;background:var(--card);
+  border:1px solid var(--line);border-radius:11px;max-height:min(320px,60vh);overflow-y:auto;z-index:20;box-shadow:0 14px 32px rgba(0,0,0,.5)}
+.loc-list[hidden]{display:none}
+.loc-opt{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;padding:10px 12px;border-radius:8px;cursor:pointer}
+.loc-opt .loc-c{color:var(--ink);font-weight:600;font-size:15px}
+.loc-opt .loc-k{color:var(--mut);font-size:12px;font-family:var(--mono);white-space:nowrap}
+.loc-opt.active,.loc-opt:hover{background:rgba(50,208,159,.15)}
+.loc-opt.active .loc-c{color:var(--green)}
+.loc-tz{display:none;align-items:center;gap:7px;font-family:var(--mono);font-size:13px;color:var(--green);margin-top:9px}
+.loc-tz.on{display:flex}
+@media(max-width:520px){.wrap{padding:28px 16px 70px}.btn{width:100%}.nav{flex-direction:column-reverse}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="bar-in" style="display:block">
+  <div style="display:flex;justify-content:space-between"><span>AI Technical Partner</span><span id="pc">1 / 4</span></div>
+  <div class="track"><span id="pb"></span></div>
+</div></div>
+
+<div class="wrap">
+<form id="f" novalidate>
+
+<fieldset class="step on" data-step="1">
+  <p class="eyebrow">Apply</p>
+  <h1>AI Technical Partner</h1>
+  <p class="lede">Working directly with me on Jarvis, our AI agency ecosystem, and the AI operating systems we build inside real businesses.</p>
+  <p class="mut">This is not a standard developer role. It suits someone who has shipped AI systems into live businesses and understands the commercial side, not just the stack. Five minutes. Short and specific beats long.</p>
+  <div class="f" style="margin-top:30px"><label for="name">What is your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+  <div class="f"><label for="email">What is your email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+  <div class="f"><label for="loc-input">Where are you based, and what timezone are you in</label>
+    <div class="loc-wrap">
+      <input id="loc-input" type="text" placeholder="Start typing a city, e.g. Gold Coast" autocomplete="off"
+        role="combobox" aria-expanded="false" aria-controls="loc-list" aria-autocomplete="list" aria-activedescendant="" required>
+      <input id="loc" name="location" type="hidden">
+      <ul class="loc-list" id="loc-list" role="listbox" hidden></ul>
+    </div>
+    <div class="loc-tz" id="loc-tz"></div>
+  </div>
+  <div class="f"><label for="role">What are you currently doing for work</label><input id="role" name="current_role" type="text" required></div>
+  <div class="nav"><button type="button" class="btn btn-go" data-next>Start</button></div>
+  <p class="err" data-err></p>
+</fieldset>
+
+<fieldset class="step" data-step="2">
+  <h2>Your experience</h2>
+  <p class="sub">What you have actually done, not what you have read about.</p>
+  <div class="f"><label for="exp">Which best describes your experience</label>
+    <select id="exp" name="experience_level" required>
+      <option value="">Choose one</option>
+      <option>I run an AI agency</option>
+      <option>I have worked at an AI agency</option>
+      <option>I have independently implemented AI systems for businesses</option>
+      <option>Mostly personal or internal AI projects</option>
+      <option>I am newer to real-world AI implementation</option>
+    </select></div>
+  <div class="f"><label for="count">How many businesses have you personally implemented AI systems or automations for</label>
+    <select id="count" name="implementations" required>
+      <option value="">Choose one</option><option>0</option><option>1 to 3</option><option>4 to 10</option><option>11 to 30</option><option>30+</option>
+    </select></div>
+  <div class="f"><label for="best">Tell me about the most advanced AI system you have personally built for a real business</label>
+    <p class="hint">Briefly: what it did, the tools and stack, what you personally built, and the outcome for the business.</p>
+    <textarea id="best" name="best_system" style="min-height:180px" required></textarea></div>
+  <div class="f"><label>What have you personally built with</label>
+    <div class="chips" id="skills">
+      <label class="chip"><input type="checkbox" name="skills" value="AI agents"><span>AI agents</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="APIs"><span>APIs</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Webhooks"><span>Webhooks</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="MCP"><span>MCP</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="RAG / knowledge systems"><span>RAG / knowledge systems</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Databases"><span>Databases</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Voice AI"><span>Voice AI</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="CRM integrations"><span>CRM integrations</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Workflow automation"><span>Workflow automation</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Custom-coded applications"><span>Custom-coded applications</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="No-code platforms"><span>No-code platforms</span></label>
+    </div></div>
+  <div class="nav"><button type="button" class="btn btn-back" data-back>Back</button><button type="button" class="btn btn-go" data-next>Next</button></div>
+  <p class="err" data-err></p>
+</fieldset>
+
+<fieldset class="step" data-step="3">
+  <h2>How you think</h2>
+  <p class="sub">Four questions. These matter more than the list above.</p>
+  <div class="f"><label for="models">Which AI models and tools are you actively using right now, and what do you use them for</label>
+    <textarea id="models" name="models" required></textarea></div>
+  <div class="f"><label for="silent">How do you stop an AI agent or automation from quietly breaking a client's business</label>
+    <textarea id="silent" name="failure_handling" required></textarea></div>
+  <div class="f"><label for="audit">You are dropped into an established business tomorrow. How would you figure out what should actually be automated with AI</label>
+    <textarea id="audit" name="audit_approach" required></textarea></div>
+  <div class="f"><label for="bad">Give me one example of an AI implementation that sounds impressive technically but probably would not be worth building for a business</label>
+    <p class="hint">And why.</p>
+    <textarea id="bad" name="bad_idea" required></textarea></div>
+  <div class="nav"><button type="button" class="btn btn-back" data-back>Back</button><button type="button" class="btn btn-go" data-next>Next</button></div>
+  <p class="err" data-err></p>
+</fieldset>
+
+<fieldset class="step" data-step="4">
+  <h2>The fit</h2>
+  <p class="sub">Last few.</p>
+  <div class="f"><label for="why">Why are you interested in working directly with us on Jarvis, our AI agency ecosystem and AI implementations</label>
+    <textarea id="why" name="why" required></textarea></div>
+  <div class="f"><label for="links">Send links to your best work</label>
+    <p class="hint">Portfolio, GitHub, Looms, architecture diagrams, case studies, screenshots, anything relevant. One per line.</p>
+    <textarea id="links" name="links" style="min-height:110px" required></textarea></div>
+  <div class="f"><label for="shape">What are you looking for</label>
+    <select id="shape" name="arrangement" required>
+      <option value="">Choose one</option><option>Full-time</option><option>Contract</option><option>Long-term technical partner</option><option>Equity / upside</option><option>Combination</option>
+    </select></div>
+  <div class="f"><label for="money">What compensation are you looking for</label><input id="money" name="compensation" type="text" required></div>
+  <div class="f"><label for="start">When could you start</label><input id="start" name="start" type="text" placeholder="Immediately, 4 weeks notice, etc" required></div>
+  <div class="nav"><button type="button" class="btn btn-back" data-back>Back</button><button type="submit" class="btn btn-go" id="send">Send application</button></div>
+  <p class="err" data-err></p>
+</fieldset>
+
+</form>
+
+<div class="done" id="done" hidden>
+  <p class="eyebrow">Received</p>
+  <h2>Got it.</h2>
+  <p class="lede">I read these myself. If it looks like a fit I will come back to you with a short case study to work through.</p>
+</div>
+</div>
+
+<script>
+var URL_="https://klyiqncsgxcrbdgonaaj.supabase.co", KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtseWlxbmNzZ3hjcmJkZ29uYWFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MjkxMTQsImV4cCI6MjA5MTAwNTExNH0.WuM-vY6LBoNF2XiQJG2YX5CDOa-AWVGlhobfeuBOLl8";
+
+var CITIES=[
+{c:'Gold Coast',k:'Australia',tz:'Australia/Brisbane'},{c:'Sydney',k:'Australia',tz:'Australia/Sydney'},
+{c:'Melbourne',k:'Australia',tz:'Australia/Melbourne'},{c:'Brisbane',k:'Australia',tz:'Australia/Brisbane'},
+{c:'Perth',k:'Australia',tz:'Australia/Perth'},{c:'Adelaide',k:'Australia',tz:'Australia/Adelaide'},
+{c:'Canberra',k:'Australia',tz:'Australia/Sydney'},{c:'Hobart',k:'Australia',tz:'Australia/Hobart'},
+{c:'Darwin',k:'Australia',tz:'Australia/Darwin'},{c:'Newcastle',k:'Australia',tz:'Australia/Sydney'},
+{c:'Wollongong',k:'Australia',tz:'Australia/Sydney'},{c:'Sunshine Coast',k:'Australia',tz:'Australia/Brisbane'},
+{c:'Cairns',k:'Australia',tz:'Australia/Brisbane'},{c:'Geelong',k:'Australia',tz:'Australia/Melbourne'},
+{c:'Townsville',k:'Australia',tz:'Australia/Brisbane'},{c:'Toowoomba',k:'Australia',tz:'Australia/Brisbane'},
+{c:'Ballarat',k:'Australia',tz:'Australia/Melbourne'},{c:'Bendigo',k:'Australia',tz:'Australia/Melbourne'},
+{c:'Launceston',k:'Australia',tz:'Australia/Hobart'},{c:'Alice Springs',k:'Australia',tz:'Australia/Darwin'},
+{c:'Auckland',k:'New Zealand',tz:'Pacific/Auckland'},{c:'Wellington',k:'New Zealand',tz:'Pacific/Auckland'},
+{c:'Christchurch',k:'New Zealand',tz:'Pacific/Auckland'},
+{c:'New York',k:'United States',tz:'America/New_York'},{c:'Los Angeles',k:'United States',tz:'America/Los_Angeles'},
+{c:'San Francisco',k:'United States',tz:'America/Los_Angeles'},{c:'San Jose',k:'United States',tz:'America/Los_Angeles'},
+{c:'Seattle',k:'United States',tz:'America/Los_Angeles'},{c:'Austin',k:'United States',tz:'America/Chicago'},
+{c:'Chicago',k:'United States',tz:'America/Chicago'},{c:'Boston',k:'United States',tz:'America/New_York'},
+{c:'Denver',k:'United States',tz:'America/Denver'},{c:'Miami',k:'United States',tz:'America/New_York'},
+{c:'Atlanta',k:'United States',tz:'America/New_York'},{c:'Dallas',k:'United States',tz:'America/Chicago'},
+{c:'Houston',k:'United States',tz:'America/Chicago'},{c:'Portland',k:'United States',tz:'America/Los_Angeles'},
+{c:'San Diego',k:'United States',tz:'America/Los_Angeles'},{c:'Washington DC',k:'United States',tz:'America/New_York'},
+{c:'Philadelphia',k:'United States',tz:'America/New_York'},{c:'Phoenix',k:'United States',tz:'America/Phoenix'},
+{c:'Las Vegas',k:'United States',tz:'America/Los_Angeles'},{c:'Minneapolis',k:'United States',tz:'America/Chicago'},
+{c:'Detroit',k:'United States',tz:'America/Detroit'},{c:'Salt Lake City',k:'United States',tz:'America/Denver'},
+{c:'Raleigh',k:'United States',tz:'America/New_York'},{c:'Nashville',k:'United States',tz:'America/Chicago'},
+{c:'Charlotte',k:'United States',tz:'America/New_York'},{c:'Columbus',k:'United States',tz:'America/New_York'},
+{c:'Indianapolis',k:'United States',tz:'America/Indiana/Indianapolis'},{c:'Pittsburgh',k:'United States',tz:'America/New_York'},
+{c:'Baltimore',k:'United States',tz:'America/New_York'},{c:'Sacramento',k:'United States',tz:'America/Los_Angeles'},
+{c:'Honolulu',k:'United States',tz:'Pacific/Honolulu'},{c:'Anchorage',k:'United States',tz:'America/Anchorage'},
+{c:'San Antonio',k:'United States',tz:'America/Chicago'},{c:'Orlando',k:'United States',tz:'America/New_York'},
+{c:'Tampa',k:'United States',tz:'America/New_York'},{c:'Kansas City',k:'United States',tz:'America/Chicago'},
+{c:'Toronto',k:'Canada',tz:'America/Toronto'},{c:'Vancouver',k:'Canada',tz:'America/Vancouver'},
+{c:'Montreal',k:'Canada',tz:'America/Toronto'},{c:'Calgary',k:'Canada',tz:'America/Edmonton'},
+{c:'Ottawa',k:'Canada',tz:'America/Toronto'},{c:'Edmonton',k:'Canada',tz:'America/Edmonton'},
+{c:'Winnipeg',k:'Canada',tz:'America/Winnipeg'},{c:'Quebec City',k:'Canada',tz:'America/Toronto'},
+{c:'Halifax',k:'Canada',tz:'America/Halifax'},
+{c:'London',k:'United Kingdom',tz:'Europe/London'},{c:'Manchester',k:'United Kingdom',tz:'Europe/London'},
+{c:'Birmingham',k:'United Kingdom',tz:'Europe/London'},{c:'Edinburgh',k:'United Kingdom',tz:'Europe/London'},
+{c:'Glasgow',k:'United Kingdom',tz:'Europe/London'},{c:'Bristol',k:'United Kingdom',tz:'Europe/London'},
+{c:'Leeds',k:'United Kingdom',tz:'Europe/London'},{c:'Liverpool',k:'United Kingdom',tz:'Europe/London'},
+{c:'Cambridge',k:'United Kingdom',tz:'Europe/London'},{c:'Oxford',k:'United Kingdom',tz:'Europe/London'},
+{c:'Belfast',k:'United Kingdom',tz:'Europe/London'},{c:'Cardiff',k:'United Kingdom',tz:'Europe/London'},
+{c:'Newcastle upon Tyne',k:'United Kingdom',tz:'Europe/London'},
+{c:'Dublin',k:'Ireland',tz:'Europe/Dublin'},{c:'Cork',k:'Ireland',tz:'Europe/Dublin'},
+{c:'Berlin',k:'Germany',tz:'Europe/Berlin'},{c:'Munich',k:'Germany',tz:'Europe/Berlin'},
+{c:'Hamburg',k:'Germany',tz:'Europe/Berlin'},{c:'Frankfurt',k:'Germany',tz:'Europe/Berlin'},
+{c:'Cologne',k:'Germany',tz:'Europe/Berlin'},{c:'Amsterdam',k:'Netherlands',tz:'Europe/Amsterdam'},
+{c:'Rotterdam',k:'Netherlands',tz:'Europe/Amsterdam'},{c:'The Hague',k:'Netherlands',tz:'Europe/Amsterdam'},
+{c:'Paris',k:'France',tz:'Europe/Paris'},{c:'Lyon',k:'France',tz:'Europe/Paris'},
+{c:'Marseille',k:'France',tz:'Europe/Paris'},{c:'Madrid',k:'Spain',tz:'Europe/Madrid'},
+{c:'Barcelona',k:'Spain',tz:'Europe/Madrid'},{c:'Valencia',k:'Spain',tz:'Europe/Madrid'},
+{c:'Lisbon',k:'Portugal',tz:'Europe/Lisbon'},{c:'Porto',k:'Portugal',tz:'Europe/Lisbon'},
+{c:'Rome',k:'Italy',tz:'Europe/Rome'},{c:'Milan',k:'Italy',tz:'Europe/Rome'},
+{c:'Turin',k:'Italy',tz:'Europe/Rome'},{c:'Naples',k:'Italy',tz:'Europe/Rome'},
+{c:'Zurich',k:'Switzerland',tz:'Europe/Zurich'},{c:'Geneva',k:'Switzerland',tz:'Europe/Zurich'},
+{c:'Basel',k:'Switzerland',tz:'Europe/Zurich'},{c:'Vienna',k:'Austria',tz:'Europe/Vienna'},
+{c:'Brussels',k:'Belgium',tz:'Europe/Brussels'},{c:'Antwerp',k:'Belgium',tz:'Europe/Brussels'},
+{c:'Stockholm',k:'Sweden',tz:'Europe/Stockholm'},{c:'Gothenburg',k:'Sweden',tz:'Europe/Stockholm'},
+{c:'Oslo',k:'Norway',tz:'Europe/Oslo'},{c:'Copenhagen',k:'Denmark',tz:'Europe/Copenhagen'},
+{c:'Helsinki',k:'Finland',tz:'Europe/Helsinki'},{c:'Warsaw',k:'Poland',tz:'Europe/Warsaw'},
+{c:'Krakow',k:'Poland',tz:'Europe/Warsaw'},{c:'Prague',k:'Czechia',tz:'Europe/Prague'},
+{c:'Budapest',k:'Hungary',tz:'Europe/Budapest'},{c:'Bucharest',k:'Romania',tz:'Europe/Bucharest'},
+{c:'Sofia',k:'Bulgaria',tz:'Europe/Sofia'},{c:'Athens',k:'Greece',tz:'Europe/Athens'},
+{c:'Reykjavik',k:'Iceland',tz:'Atlantic/Reykjavik'},{c:'Tallinn',k:'Estonia',tz:'Europe/Tallinn'},
+{c:'Riga',k:'Latvia',tz:'Europe/Riga'},{c:'Vilnius',k:'Lithuania',tz:'Europe/Vilnius'},
+{c:'Zagreb',k:'Croatia',tz:'Europe/Zagreb'},{c:'Belgrade',k:'Serbia',tz:'Europe/Belgrade'},
+{c:'Ljubljana',k:'Slovenia',tz:'Europe/Ljubljana'},{c:'Bratislava',k:'Slovakia',tz:'Europe/Bratislava'},
+{c:'Luxembourg City',k:'Luxembourg',tz:'Europe/Luxembourg'},{c:'Kyiv',k:'Ukraine',tz:'Europe/Kyiv'},
+{c:'Moscow',k:'Russia',tz:'Europe/Moscow'},{c:'Saint Petersburg',k:'Russia',tz:'Europe/Moscow'},
+{c:'Istanbul',k:'Turkey',tz:'Europe/Istanbul'},{c:'Ankara',k:'Turkey',tz:'Europe/Istanbul'},
+{c:'Bengaluru',k:'India',tz:'Asia/Kolkata'},{c:'Mumbai',k:'India',tz:'Asia/Kolkata'},
+{c:'Delhi',k:'India',tz:'Asia/Kolkata'},{c:'Hyderabad',k:'India',tz:'Asia/Kolkata'},
+{c:'Chennai',k:'India',tz:'Asia/Kolkata'},{c:'Pune',k:'India',tz:'Asia/Kolkata'},
+{c:'Kolkata',k:'India',tz:'Asia/Kolkata'},{c:'Ahmedabad',k:'India',tz:'Asia/Kolkata'},
+{c:'Gurugram',k:'India',tz:'Asia/Kolkata'},{c:'Noida',k:'India',tz:'Asia/Kolkata'},
+{c:'Chandigarh',k:'India',tz:'Asia/Kolkata'},{c:'Jaipur',k:'India',tz:'Asia/Kolkata'},
+{c:'Kochi',k:'India',tz:'Asia/Kolkata'},
+{c:'Singapore',k:'Singapore',tz:'Asia/Singapore'},{c:'Kuala Lumpur',k:'Malaysia',tz:'Asia/Kuala_Lumpur'},
+{c:'Penang',k:'Malaysia',tz:'Asia/Kuala_Lumpur'},{c:'Jakarta',k:'Indonesia',tz:'Asia/Jakarta'},
+{c:'Denpasar',k:'Indonesia',tz:'Asia/Makassar'},{c:'Bangkok',k:'Thailand',tz:'Asia/Bangkok'},
+{c:'Manila',k:'Philippines',tz:'Asia/Manila'},{c:'Cebu',k:'Philippines',tz:'Asia/Manila'},
+{c:'Ho Chi Minh City',k:'Vietnam',tz:'Asia/Ho_Chi_Minh'},{c:'Hanoi',k:'Vietnam',tz:'Asia/Ho_Chi_Minh'},
+{c:'Phnom Penh',k:'Cambodia',tz:'Asia/Phnom_Penh'},{c:'Yangon',k:'Myanmar',tz:'Asia/Yangon'},
+{c:'Tokyo',k:'Japan',tz:'Asia/Tokyo'},{c:'Osaka',k:'Japan',tz:'Asia/Tokyo'},
+{c:'Seoul',k:'South Korea',tz:'Asia/Seoul'},{c:'Busan',k:'South Korea',tz:'Asia/Seoul'},
+{c:'Shanghai',k:'China',tz:'Asia/Shanghai'},{c:'Beijing',k:'China',tz:'Asia/Shanghai'},
+{c:'Shenzhen',k:'China',tz:'Asia/Shanghai'},{c:'Guangzhou',k:'China',tz:'Asia/Shanghai'},
+{c:'Hong Kong',k:'Hong Kong',tz:'Asia/Hong_Kong'},{c:'Taipei',k:'Taiwan',tz:'Asia/Taipei'},
+{c:'Kaohsiung',k:'Taiwan',tz:'Asia/Taipei'},
+{c:'Dubai',k:'United Arab Emirates',tz:'Asia/Dubai'},{c:'Abu Dhabi',k:'United Arab Emirates',tz:'Asia/Dubai'},
+{c:'Doha',k:'Qatar',tz:'Asia/Qatar'},{c:'Riyadh',k:'Saudi Arabia',tz:'Asia/Riyadh'},
+{c:'Jeddah',k:'Saudi Arabia',tz:'Asia/Riyadh'},{c:'Manama',k:'Bahrain',tz:'Asia/Bahrain'},
+{c:'Kuwait City',k:'Kuwait',tz:'Asia/Kuwait'},{c:'Muscat',k:'Oman',tz:'Asia/Muscat'},
+{c:'Tel Aviv',k:'Israel',tz:'Asia/Jerusalem'},{c:'Jerusalem',k:'Israel',tz:'Asia/Jerusalem'},
+{c:'Amman',k:'Jordan',tz:'Asia/Amman'},{c:'Beirut',k:'Lebanon',tz:'Asia/Beirut'},
+{c:'Mexico City',k:'Mexico',tz:'America/Mexico_City'},{c:'Guadalajara',k:'Mexico',tz:'America/Mexico_City'},
+{c:'Monterrey',k:'Mexico',tz:'America/Monterrey'},{c:'Sao Paulo',k:'Brazil',tz:'America/Sao_Paulo'},
+{c:'Rio de Janeiro',k:'Brazil',tz:'America/Sao_Paulo'},{c:'Brasilia',k:'Brazil',tz:'America/Sao_Paulo'},
+{c:'Buenos Aires',k:'Argentina',tz:'America/Argentina/Buenos_Aires'},{c:'Santiago',k:'Chile',tz:'America/Santiago'},
+{c:'Bogota',k:'Colombia',tz:'America/Bogota'},{c:'Medellin',k:'Colombia',tz:'America/Bogota'},
+{c:'Lima',k:'Peru',tz:'America/Lima'},{c:'Montevideo',k:'Uruguay',tz:'America/Montevideo'},
+{c:'San Jose',k:'Costa Rica',tz:'America/Costa_Rica'},{c:'Panama City',k:'Panama',tz:'America/Panama'},
+{c:'Cape Town',k:'South Africa',tz:'Africa/Johannesburg'},{c:'Johannesburg',k:'South Africa',tz:'Africa/Johannesburg'},
+{c:'Pretoria',k:'South Africa',tz:'Africa/Johannesburg'},{c:'Durban',k:'South Africa',tz:'Africa/Johannesburg'},
+{c:'Nairobi',k:'Kenya',tz:'Africa/Nairobi'},{c:'Lagos',k:'Nigeria',tz:'Africa/Lagos'},
+{c:'Abuja',k:'Nigeria',tz:'Africa/Lagos'},{c:'Accra',k:'Ghana',tz:'Africa/Accra'},
+{c:'Cairo',k:'Egypt',tz:'Africa/Cairo'},{c:'Casablanca',k:'Morocco',tz:'Africa/Casablanca'},
+{c:'Tunis',k:'Tunisia',tz:'Africa/Tunis'},{c:'Kigali',k:'Rwanda',tz:'Africa/Kigali'},
+{c:'Addis Ababa',k:'Ethiopia',tz:'Africa/Addis_Ababa'},
+{c:'Suva',k:'Fiji',tz:'Pacific/Fiji'}
+];
+
+(function locTypeahead(){
+  var input=document.getElementById('loc-input'), hidden=document.getElementById('loc'),
+      list=document.getElementById('loc-list'), tzBox=document.getElementById('loc-tz'),
+      active=-1, matches=[], picked=null;
+
+  function tzOffsetLabel(tz){
+    try{
+      var parts=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'shortOffset'}).formatToParts(new Date());
+      var p=parts.filter(function(x){return x.type==='timeZoneName'})[0];
+      return p ? p.value.replace('GMT','UTC') : '';
+    }catch(e){ return ''; }
+  }
+
+  function search(q){
+    q=q.toLowerCase();
+    if(!q) return [];
+    var pre=[], sub=[];
+    CITIES.forEach(function(city){
+      var cl=city.c.toLowerCase(), kl=city.k.toLowerCase();
+      if(cl.indexOf(q)===0 || kl.indexOf(q)===0) pre.push(city);
+      else if(cl.indexOf(q)>-1 || kl.indexOf(q)>-1) sub.push(city);
+    });
+    return pre.concat(sub).slice(0,8);
+  }
+
+  function close(){
+    list.hidden=true; list.innerHTML=''; active=-1;
+    input.setAttribute('aria-expanded','false');
+    input.setAttribute('aria-activedescendant','');
+  }
+
+  function render(){
+    if(!matches.length){ close(); return; }
+    list.innerHTML='';
+    matches.forEach(function(city,idx){
+      var li=document.createElement('li');
+      li.className='loc-opt'+(idx===active?' active':'');
+      li.id='loc-opt-'+idx;
+      li.setAttribute('role','option');
+      li.setAttribute('aria-selected', idx===active ? 'true':'false');
+      li.innerHTML='<span class="loc-c"></span><span class="loc-k"></span>';
+      li.querySelector('.loc-c').textContent=city.c;
+      li.querySelector('.loc-k').textContent=city.k;
+      li.addEventListener('mousedown', function(ev){ ev.preventDefault(); pick(city); });
+      list.appendChild(li);
+    });
+    list.hidden=false;
+    input.setAttribute('aria-expanded','true');
+    input.setAttribute('aria-activedescendant', active>-1 ? 'loc-opt-'+active : '');
+  }
+
+  function showTz(city){
+    var off=tzOffsetLabel(city.tz);
+    tzBox.textContent=city.tz+(off ? ' · '+off : '');
+    tzBox.classList.add('on');
+  }
+  function hideTz(){ tzBox.classList.remove('on'); tzBox.textContent=''; }
+
+  function pick(city){
+    picked=city;
+    input.value=city.c+', '+city.k;
+    var off=tzOffsetLabel(city.tz);
+    hidden.value=city.c+', '+city.k+' ('+city.tz+(off ? ', '+off : '')+')';
+    showTz(city);
+    close();
+  }
+
+  input.addEventListener('input', function(){
+    picked=null; hideTz();
+    hidden.value=input.value;
+    active=-1;
+    matches=search(input.value.trim());
+    render();
+  });
+
+  input.addEventListener('keydown', function(ev){
+    if(list.hidden && ev.key!=='Escape') return;
+    if(ev.key==='ArrowDown'){ ev.preventDefault(); if(!matches.length) return; active=Math.min(active+1, matches.length-1); render(); }
+    else if(ev.key==='ArrowUp'){ ev.preventDefault(); if(!matches.length) return; active=Math.max(active-1, 0); render(); }
+    else if(ev.key==='Enter'){ if(active>-1 && matches[active]){ ev.preventDefault(); pick(matches[active]); } }
+    else if(ev.key==='Escape'){ close(); }
+  });
+
+  input.addEventListener('blur', function(){ setTimeout(close, 120); });
+
+  hidden.value=input.value;
+})();
+
+var steps=[].slice.call(document.querySelectorAll('.step')), i=0, f=document.getElementById('f');
+function paint(){
+  steps.forEach(function(s,n){ s.classList.toggle('on', n===i); });
+  document.getElementById('pc').textContent=(i+1)+' / '+steps.length;
+  document.getElementById('pb').style.width=Math.round(i/(steps.length-1)*100)+'%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function ok(step){
+  var bad=null;
+  step.querySelectorAll('[required]').forEach(function(el){
+    var v=(el.value||'').trim();
+    if(!v && !bad) bad=el;
+    if(el.type==='email' && v && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) && !bad) bad=el;
+  });
+  var e=step.querySelector('[data-err]');
+  if(bad){ e.textContent='Fill this one in before moving on.'; bad.focus(); bad.style.borderColor='#ff9b7d'; setTimeout(function(){bad.style.borderColor=''},1800); return false; }
+  e.textContent=''; return true;
+}
+f.addEventListener('click',function(ev){
+  var n=ev.target.closest('[data-next]'), b=ev.target.closest('[data-back]');
+  if(n){ if(ok(steps[i])){ i=Math.min(i+1,steps.length-1); paint(); } }
+  if(b){ i=Math.max(i-1,0); paint(); }
+});
+f.addEventListener('submit',function(ev){
+  ev.preventDefault();
+  if(!ok(steps[i])) return;
+  var btn=document.getElementById('send'); btn.disabled=true; btn.textContent='Sending';
+  var d={}, fd=new FormData(f);
+  fd.forEach(function(v,k){ if(d[k]){ d[k]=[].concat(d[k],v) } else { d[k]=v } });
+  if(d.skills && !Array.isArray(d.skills)) d.skills=[d.skills];
+  var row={ name:d.name, email:d.email, payload:d, submitted_at:new Date().toISOString(),
+            source:(new URLSearchParams(location.search)).get('src')||'direct' };
+  fetch(URL_+'/rest/v1/cto_applications',{method:'POST',headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,
+    'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(row)})
+  .then(function(r){ if(!r.ok) throw new Error(r.status);
+    f.hidden=true; document.querySelector('.bar').hidden=true; document.getElementById('done').hidden=false; window.scrollTo({top:0}); })
+  .catch(function(){ btn.disabled=false; btn.textContent='Send application';
+    steps[i].querySelector('[data-err]').textContent='That did not send. Try once more, or email it to me directly.'; });
+});
+paint();
+</script>
+</body>
+</html>
